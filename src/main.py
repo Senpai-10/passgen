@@ -25,9 +25,18 @@ def main(file, no_output, count, length, no_lower, no_upper, no_num, no_symbols)
   if len(chars) == 0: chars += lower
   
   if int(count) > 1:
+    if file: f = open(file, "a")
     for i in range(count):
       password = "".join(random.sample(chars, length))
       if no_output == False: click.echo(password)
+      
+      if file: f.write(password + "\n")
+    if file: f.close()
+      
   elif int(count) == 1:
     password = "".join(random.sample(chars, length))
     if no_output == False: click.echo(password)
+    if file:
+      with open(file, "a") as f:
+        f.write(password + "\n")
+        f.close()
