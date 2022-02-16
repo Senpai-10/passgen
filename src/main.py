@@ -1,9 +1,7 @@
 import random, string, click
 
 @click.command()
-@click.option("-l", "--length", default=16, 
-              show_default=True, type=int, 
-              help="length of password")
+@click.option("-l", "--length", default=16, show_default=True, type=int, help="length of password")
 @click.option("-c", "--count", default=1, show_default=True, type=int, help="number of generated passwords")
 @click.option("-nl", "--no-lower", type=bool, help="no lower case character", is_flag=True)
 @click.option("-nu", "--no-upper", type=bool, help="no upper case character", is_flag=True)
